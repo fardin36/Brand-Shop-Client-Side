@@ -2,7 +2,7 @@
 const Advertisement = () => {
     return (
         <div>
-
+            Adtertisemant slides
         </div>
     );
 };

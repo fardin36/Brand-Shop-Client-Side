@@ -2,7 +2,7 @@
 const MyCart = () => {
     return (
         <div>
-
+            My cart
         </div>
     );
 };

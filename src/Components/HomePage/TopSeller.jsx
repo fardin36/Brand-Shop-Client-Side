@@ -2,7 +2,7 @@
 const TopSeller = () => {
     return (
         <div>
-
+            Top seller
         </div>
     );
 };

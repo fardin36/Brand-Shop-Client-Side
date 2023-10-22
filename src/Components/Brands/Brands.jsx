@@ -2,7 +2,7 @@
 const Brands = () => {
     return (
         <div>
-
+            Brand Names
         </div>
     );
 };
