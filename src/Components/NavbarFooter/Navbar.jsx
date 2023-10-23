@@ -1,10 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaUserCircle } from 'react-icons/fa';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import whiteLogo from "../../assets/white-logo.png";
 import blackLogo from "../../assets/black-logo.png";
-
-import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
 import { toast } from "react-toastify";
 
@@ -91,9 +89,9 @@ const Navbar = () => {
 
         </label>
         <div className="avatar">
-            <div className="w-9 rounded-full">
+            <div className="w-9 rounded-full text-3xl cursor-pointer">
                 {
-                    user?.photoURL ? <img src={user?.photoURL} /> : <FaUserCircle className="text-3xl cursor-pointer"></FaUserCircle>
+                    user?.photoURL ? <img src={user?.photoURL} /> : <FaUserCircle></FaUserCircle>
                 }
             </div>
         </div>
