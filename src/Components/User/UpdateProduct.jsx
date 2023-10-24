@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
 
+    const navigate = useNavigate()
     const product = useLoaderData();
     const { _id, image, name, brand, type, price, rating, description, } = product;
 
@@ -41,6 +42,7 @@ const UpdateProduct = () => {
                     })
                 }
                 form.reset();
+                navigate(location?.state ? location.state : `/brands/${brand}`);
             })
 
     }
