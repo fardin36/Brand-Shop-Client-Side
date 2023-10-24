@@ -1,6 +1,5 @@
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Root from "../Components/Root/Root";
-import Advertisement from "../Components/Brands/Advertisement";
 import Products from "../Components/Brands/Products";
 import Home from "../Components/HomePage/Home";
 import ProductDetails from "../Components/Brands/ProductDetails";
@@ -22,17 +21,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: '/products/:brand',
-                element: <>
-                    <Advertisement />
-                    <Outlet></Outlet>
-                </>,
-                children: [
-                    {
-                        path: 'products/:brand',
-                        element: <Products></Products>,
-                    }
-                ]
+                path: '/brands/:name',
+                element: <Products></Products>,
             },
             {
                 path: '/products/:id',

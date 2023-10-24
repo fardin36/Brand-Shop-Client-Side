@@ -20,7 +20,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="min-h-screen flex justify-center items-center w-full px-20">
+        <div className="min-h-screen flex justify-center items-center w-full px-6 md:px-20 pt-14">
             <form className="w-full" onSubmit={handleAddProduct}>
                 <div className="relative z-0 w-full mb-6 group">
                     <input type="text" name="image" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
