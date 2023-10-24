@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import whiteLogo from "../../assets/white-logo.png";
 import { FaShopify } from "react-icons/fa";
+import Brands from "../Brands/Brands";
 
 const Banner = () => {
     return (
