@@ -1,13 +1,42 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const ProductDetails = () => {
+
+    const { user } = useContext(AuthContext);
+    const email = user?.email;
+    console.log(email);
 
     const product = useLoaderData();
     const { image, name, brand, type, price, rating, description, } = product;
 
     const handleAddToCart = () => {
 
+        const newCartItem = { email, image, name, brand, type, price, rating, description, }
+
+        // add to cart using database server
+        fetch(`http://localhost:5000/cart`, {
+            method: "post",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newCartItem),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data?.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product added to Cart!',
+                        icon: 'success',
+                        confirmButtonText: 'DONE'
+                    })
+                }
+            })
     }
 
     return (
@@ -46,7 +75,7 @@ const ProductDetails = () => {
                         <p className="text-4xl text-[#ffb300] font-bold">
                             ${price}
                         </p>
-                        <Link onClick={handleAddToCart} className="flex justify-end items-center gap-2 btn rounded-lg uppercase btn-ghost bg-[#ffb300] shadow-2xl text-black">Add to <FaShoppingCart></FaShoppingCart></Link>
+                        <Link onClick={user?.email && handleAddToCart} className="flex justify-end items-center gap-2 btn rounded-lg uppercase btn-ghost bg-[#ffb300] shadow-2xl text-black">Add to <FaShoppingCart></FaShoppingCart></Link>
                     </div>
                 </div>
             </div>
