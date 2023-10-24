@@ -8,7 +8,6 @@ const ProductDetails = () => {
 
     const { user } = useContext(AuthContext);
     const email = user?.email;
-    console.log(email);
 
     const product = useLoaderData();
     const { image, name, brand, type, price, rating, description, } = product;
@@ -18,7 +17,7 @@ const ProductDetails = () => {
         const newCartItem = { email, image, name, brand, type, price, rating, description, }
 
         // add to cart using database server
-        fetch(`http://localhost:5000/cart`, {
+        fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/cart`, {
             method: "post",
             headers: {
                 "content-type": "application/json",
@@ -27,7 +26,6 @@ const ProductDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data?.insertedId) {
                     Swal.fire({
                         title: 'Success!',

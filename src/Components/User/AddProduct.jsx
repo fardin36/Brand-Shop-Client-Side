@@ -14,11 +14,10 @@ const AddProduct = () => {
         const rating = form.rating.value;
         const description = form.description.value;
 
-        const newProduct = { image, name, brand, type, price, rating, description, }
-        console.log(newProduct);
+        const newProduct = { image, name, brand, type, price, rating, description, };
 
         // send data to server
-        fetch(`http://localhost:5000/products`, {
+        fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products`, {
             method: "post",
             headers: {
                 "content-type": "application/json",
@@ -27,7 +26,6 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data?.insertedId) {
                     Swal.fire({
                         title: 'Success!',

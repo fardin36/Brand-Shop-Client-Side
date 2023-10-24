@@ -19,11 +19,10 @@ const UpdateProduct = () => {
         const rating = form.rating.value;
         const description = form.description.value;
 
-        const updatedProduct = { image, name, brand, type, price, rating, description, }
-        console.log(updatedProduct);
+        const updatedProduct = { image, name, brand, type, price, rating, description, };
 
         // send data to server
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products/${_id}`, {
             method: "put",
             headers: {
                 "content-type": "application/json",
@@ -32,7 +31,6 @@ const UpdateProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data?.modifiedCount) {
                     Swal.fire({
                         title: 'Success!',
