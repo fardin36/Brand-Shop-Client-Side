@@ -11,12 +11,10 @@ const AddProduct = () => {
         const brand = form.brand.value;
         const type = form.type.value;
         const price = form.price.value;
-        const description = form.description.value;
         const rating = form.rating.value;
+        const description = form.description.value;
 
-        const newProduct = {
-            image, name, brand, type, price, description, rating,
-        }
+        const newProduct = { image, name, brand, type, price, rating, description, }
         console.log(newProduct);
 
         // send data to server
@@ -29,7 +27,7 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data?.insertedId) {
                     Swal.fire({
                         title: 'Success!',
@@ -38,6 +36,7 @@ const AddProduct = () => {
                         confirmButtonText: 'DONE'
                     })
                 }
+                form.reset();
             })
     }
 
@@ -62,18 +61,18 @@ const AddProduct = () => {
                         <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Category</label>
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="price" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
+                        <input type="decimal" name="price" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
                         <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Price</label>
                     </div>
                 </div>
                 <div className="grid md:grid-cols-2 md:gap-6">
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="description" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
-                        <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Short description</label>
+                        <input type="decimal" name="rating" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
+                        <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rating</label>
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="rating" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
-                        <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rating</label>
+                        <input type="text" name="description" className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#ffb300] peer" placeholder=" " required />
+                        <label className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#ffb300] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Short description</label>
                     </div>
                 </div>
                 <button type="submit" className="text-white bg-[#ffb300] hover:bg-[#ffb300d5] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Submit</button>

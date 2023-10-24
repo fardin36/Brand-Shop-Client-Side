@@ -44,7 +44,7 @@ const Brands = () => {
                         <h2 className="card-title">{item.brand_name}</h2>
                         <p>{item.slogan}</p>
                         <div className="card-actions justify-end">
-                            <Link to={`/brands/${item.brand_name}`} className="btn rounded-lg">Shop now</Link>
+                            <button className="btn rounded-lg">Shop now</button>
                         </div>
                     </div>
                 </Link>)
