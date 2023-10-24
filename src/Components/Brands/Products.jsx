@@ -40,8 +40,11 @@ const Products = () => {
                                     <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-3xl font-bold">{product?.price}</span>
-                                    <Link to={`/products/:id`} className="flex justify-center items-center gap-3 border border-[#ffb300] font-medium rounded-lg text-sm px-5 py-2.5">Details</Link>
+                                    <span className="text-3xl font-bold">${product?.price}</span>
+                                    <div className="flex justify-end items-center gap-2">
+                                        <Link to={`/update-product/${product._id}`} className="flex justify-center items-center gap-3 border border-[#ffb300] font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5">Update</Link>
+                                        <Link to={`/products/:id`} className="flex justify-center items-center gap-3 border border-[#ffb300] font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5">Details</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>)
