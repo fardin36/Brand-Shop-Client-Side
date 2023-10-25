@@ -1,4 +1,4 @@
-# ArenaSync
+# techstore
 
 ## [ techstore: Tech Shop ](https://joyful-puppy-3113af.netlify.app/)
 

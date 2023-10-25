@@ -10,7 +10,7 @@ const Products = () => {
     return (
         <div>
             <Advertisement></Advertisement>
-            <div className="min-h-screen flex flex-wrap justify-center items-center pt-20 gap-5">
+            <div className="min-h-screen flex flex-wrap justify-center items-center pt-10 gap-5">
                 {
                     fetchedProducts.length > 0
                         ?
