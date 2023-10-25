@@ -22,7 +22,7 @@ const UpdateProduct = () => {
         const updatedProduct = { image, name, brand, type, price, rating, description, };
 
         // send data to server
-        fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products/${_id}`, {
+        fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/products/${_id}`, {
             method: "put",
             headers: {
                 "content-type": "application/json",

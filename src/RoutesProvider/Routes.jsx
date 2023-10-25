@@ -24,12 +24,12 @@ const router = createBrowserRouter([
             {
                 path: '/brands/:name',
                 element: <Products></Products>,
-                loader: () => fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products`),
+                loader: () => fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/products`),
             },
             {
                 path: '/products/:id',
                 element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/products/${params.id}`)
             },
             {
                 path: '/add-product',
@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             {
                 path: '/update-product/:id',
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/products/${params.id}`)
             },
             {
                 path: '/my-cart',
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/cart`),
+                loader: () => fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/cart`),
             },
             {
                 path: '/login',

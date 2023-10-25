@@ -24,7 +24,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, remove it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/cart/${_id}`, {
+                fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/cart/${_id}`, {
                     method: "delete",
                 })
                     .then(res => res.json())

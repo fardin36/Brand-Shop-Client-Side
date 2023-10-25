@@ -17,7 +17,7 @@ const ProductDetails = () => {
         const newCartItem = { email, image, name, brand, type, price, rating, description, }
 
         // add to cart using database server
-        fetch(`https://technology-brand-server-bhu2qhum7-fardin36.vercel.app/cart`, {
+        fetch(`https://technology-brand-server-biacp6q4n-fardin36.vercel.app/cart`, {
             method: "post",
             headers: {
                 "content-type": "application/json",
